@@ -1,8 +1,11 @@
 package trainCatcher;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +24,9 @@ public class Schedule {
 	
 	public static Schedule buildSchedule(String fileName){
 		try {
-            FileInputStream inputStream = new FileInputStream(fileName);
+			File file = new File(fileName);
+			FileInputStream inputStream = new FileInputStream(file); 
+            //FileInputStream inputStream = new FileInputStream(fileName);
             InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
             BufferedReader bufferedReader = new BufferedReader(reader);
             String line;
