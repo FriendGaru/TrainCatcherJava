@@ -1,5 +1,6 @@
 package trainCatcher;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,6 +21,11 @@ public class TrainCatcherApp {
 		LookupResults lookup = tc.getLookupNow();
 		System.out.println(lookup);
 		
+		try {
+			int read = System.in.read();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
