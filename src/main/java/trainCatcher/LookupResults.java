@@ -32,13 +32,22 @@ public class LookupResults {
 	public String toString() {
 		String out = TrainCatcher.timeDayToStr(this.time, this.day);
 		if (badTrains.size() > 0) {
-			out += "\nBad: " + String.join("  ", badTrains.stream().map(dep -> dep.toString()).collect(Collectors.toList()));
+			out += "\nBad: ";
+			for (int i = 0; i < badTrains.size();i++) {
+				out += " " + badTrains.get(i).toString();
+			}	
 		}
 		if (maybeTrains.size() > 0) {
-			out += "\nMaybe: " + String.join("  ", maybeTrains.stream().map(dep -> dep.toString()).collect(Collectors.toList()));
+			out += "\nMaybe: ";
+			for (int i = 0; i < maybeTrains.size();i++) {
+				out += " " + maybeTrains.get(i).toString();
+			}
 		}
 		if (goodTrains.size() > 0) {
-			out += "\nGood: " + String.join("  ", goodTrains.stream().map(dep -> dep.toString()).collect(Collectors.toList()));
+			out += "\nGood: " ;
+			for (int i = 0; i < goodTrains.size();i++) {
+				out += " " + goodTrains.get(i).toString();
+			}
 		}
 		
 		return out;

@@ -24,7 +24,8 @@ public class Schedule {
 	
 	public static Schedule buildSchedule(String fileName){
 		try {
-			FileInputStream inputStream = new FileInputStream(fileName);
+			//InputStream inputStream = new FileInputStream(fileName);
+			InputStream inputStream = Schedule.class.getResourceAsStream(fileName);
             InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
             BufferedReader bufferedReader = new BufferedReader(reader);
             String line;
